@@ -1,5 +1,12 @@
 # список правил грамматики для калькулятора
 
+code: codeLine+;
+codeLine:
+    (assignmentExpression | expression) SEMICOLON;
+
+assignmentExpression:
+    VARIABLE EQUALS expression;
+
 expression:
     mulExpression plusMinusPart*;
 
@@ -16,6 +23,7 @@ mulDivPart:
 atom:
     FLOAT_NUM
     | INT_NUM
+    | VARIABLE
     | L_P expression R_P;
 
 
